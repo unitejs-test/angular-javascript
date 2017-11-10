@@ -34,9 +34,9 @@ before_install:
   - node unitejs/cli/bin/unite generate --type=module --name=MyModule --outputDirectory=./app
   - node unitejs/cli/bin/unite generate --type=pipe --name=MyPipe --outputDirectory=./app
   - node unitejs/cli/bin/unite generate --type=service --name=MyService --outputDirectory=./app
-  - node unitejs/cli/bin/unite platform --operation=add --platformName=Electron --outputDirectory=./app
-  - node unitejs/cli/bin/unite platform --operation=add --platformName=Docker --outputDirectory=./app
   - node unitejs/cli/bin/unite platform --operation=add --platformName=Cordova --outputDirectory=./app
+  - node unitejs/cli/bin/unite platform --operation=add --platformName=Docker --outputDirectory=./app
+  - node unitejs/cli/bin/unite platform --operation=add --platformName=Electron --outputDirectory=./app
   - cd ./app/www
 install:
   - npm install
@@ -46,10 +46,10 @@ script:
   - gulp unit || travis_terminate 1
   - gulp e2e-install --drivers=chrome || travis_terminate 1
   - gulp e2e || travis_terminate 1
-  - gulp platform-electron-dev || travis_terminate 1
   - gulp build --buildConfiguration=prod || travis_terminate 1
   - gulp e2e || travis_terminate 1
   - gulp platform-web-package --buildConfiguration=prod || travis_terminate 1
+  - gulp platform-electron-dev || travis_terminate 1
   - gulp platform-electron-package --buildConfiguration=prod || travis_terminate 1
   - gulp platform-docker-package --buildConfiguration=prod || travis_terminate 1
   - gulp platform-cordova-dev --buildConfiguration=prod || travis_terminate 1

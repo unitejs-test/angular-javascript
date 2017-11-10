@@ -21,9 +21,11 @@
 * gulp unit
 * gulp e2e-install
 * gulp e2e
-* gulp platform-electron-dev
 * gulp build --buildConfiguration=prod
 * gulp e2e
 * gulp platform-web-package --buildConfiguration=prod
+* gulp platform-electron-dev
 * gulp platform-electron-package --buildConfiguration=prod
 * gulp platform-docker-package --buildConfiguration=prod
+* gulp platform-cordova-dev --buildConfiguration=prod
+* gulp platform-cordova-theme --buildConfiguration=prod
