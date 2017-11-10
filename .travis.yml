@@ -36,6 +36,7 @@ before_install:
   - node unitejs/cli/bin/unite generate --type=service --name=MyService --outputDirectory=./app
   - node unitejs/cli/bin/unite platform --operation=add --platformName=Electron --outputDirectory=./app
   - node unitejs/cli/bin/unite platform --operation=add --platformName=Docker --outputDirectory=./app
+  - node unitejs/cli/bin/unite platform --operation=add --platformName=Cordova --outputDirectory=./app
   - cd ./app/www
 install:
   - npm install
