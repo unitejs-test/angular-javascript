@@ -24,6 +24,7 @@ before_install:
   - npm link "unitejs-framework" "unitejs-cli-core" "unitejs-engine"
   - cd ../../
   - npm install -g gulp
+  - npm install -g cordova
   - node unitejs/cli/bin/unite configure --packageName=angular-javascript --title="Angular JavaScript" --profile=AngularJavaScript --outputDirectory=./app
   - node unitejs/cli/bin/unite generate --type=class --name=MyClass --outputDirectory=./app
   - node unitejs/cli/bin/unite generate --type=component --name=MyComponent --outputDirectory=./app
@@ -50,6 +51,8 @@ script:
   - gulp platform-web-package --buildConfiguration=prod || travis_terminate 1
   - gulp platform-electron-package --buildConfiguration=prod || travis_terminate 1
   - gulp platform-docker-package --buildConfiguration=prod || travis_terminate 1
+  - gulp platform-cordova-dev --buildConfiguration=prod || travis_terminate 1
+  - gulp platform-cordova-theme --buildConfiguration=prod || travis_terminate 1
 cache:
   directories:
   - ./app/www/node_modules
