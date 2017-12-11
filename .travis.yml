@@ -11,7 +11,7 @@ before_install:
   - cd ../../
   - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/cli-core.git unitejs/unitejs-cli-core
   - cd unitejs/unitejs-cli-core
-  - npm link unitejs/unitejs-framework
+  - npm link unitejs-framework
   - npm link
   - cd ../../
   - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/packages.git unitejs/unitejs-packages
@@ -20,12 +20,12 @@ before_install:
   - cd ../../
   - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/engine.git unitejs/unitejs-engine
   - cd unitejs/unitejs-engine
-  - npm link unitejs/unitejs-framework unitejs/unitejs-packages
+  - npm link unitejs-framework unitejs-packages
   - npm link
   - cd ../../
   - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/cli.git unitejs/unitejs-cli
   - cd unitejs/unitejs-cli
-  - npm link unitejs/unitejs-framework unitejs/unitejs-cli-core unitejs/unitejs-engine
+  - npm link unitejs-framework unitejs-cli-core unitejs-engine
   - cd ../../
   - npm install -g gulp
   - npm install -g cordova
